@@ -1,0 +1,65 @@
+p{
+  font-size: 2em;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* Header */
+.header {
+    background-color: #000000;
+    padding: 20px 20px 0px 20px;
+    text-align: center;
+  }
+  
+  .logo {
+    max-width: 250px;
+  }
+  
+ /* confirmacion de reserva */
+.confirmation {
+    text-align: center;
+    color: #ffffff;
+    max-height: 80vh; /* Limitar la altura máxima */
+    overflow-y: auto; /* Habilitar el scroll vertical */
+  
+    .newTime,
+    input[type="date"],
+    select {
+      padding: 5px;
+      font-size: 16px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: 100%;
+      max-width: 300px;
+    }
+  
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  
+    .cancel {
+      background-color: #8b0000;
+      color: #ffffff;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  
+      &:hover {
+        background-color: #a52a2a;
+      }
+    }
+  
+    label {
+      margin-right: 10px;
+      font-size: 20px;
+    }
+  
+    .flecha img {
+      height: 110px;
+      width: 110px;
+      transform: rotate(-80deg);
+    }
+  }

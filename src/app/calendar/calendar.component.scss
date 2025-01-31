@@ -1,0 +1,221 @@
+.calendar-container {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 13px;
+  text-align: center;
+
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    h2 {
+      margin: 0;
+      font-size: 1.5em;
+      color: #333;
+    }
+
+    button {
+      background-color: #ffd700; /* Color oro */
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer;
+      font-weight: bold;
+      margin: 10px;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #e6c200; /* Color oro oscuro */
+      }
+    }
+  }
+
+  .cal-month-view {
+    table {
+      width: 100%;
+    }
+  }
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+  }
+
+  input[type="email"],
+  input[type="tel"] {
+    width: 100%;
+    padding: 15px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+
+    &:focus {
+      border-color: #007bff; /* Color azul */
+      outline: none;
+    }
+  }
+}
+
+.phone-input {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+
+  .phone-input-inner {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    .country-select {
+      margin-right: 10px;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      background-color: #fff;
+      flex-shrink: 0;
+      transition: border-color 0.3s;
+    }
+
+    &:focus {
+      border-color: #007bff; /* Color azul */
+      outline: none;
+    }
+  }
+
+  input[type="tel"] {
+    flex: 1;
+    padding: 15px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    transition: border-color 0.3s;
+
+    &:focus {
+      border-color: #007bff; /* Color azul */
+      outline: none;
+    }
+  }
+}
+
+.appointments-list {
+  margin-top: 20px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #fff;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideIn 0.8s forwards;
+
+  &.slide-out {
+    animation: slideOut 0.8s forwards;
+  }
+
+  h3 {
+    font-size: 1.5em;
+    color: #333;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      .btn-available {
+        background-color: #ffd700; /* Color oro */
+        border: none;
+        padding: 5px 10px;
+        border-radius: 4px;
+        color: #fff;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: #e6c200; /* Color oro oscuro */
+        }
+      }
+      
+    }
+    .btn-available-confirm {
+      background-color: #ffd700;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 4px;
+      color: #fff;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1em;
+      transition: background-color 0.3s;
+    
+      &:hover {
+        background-color: #e6c200; /* Color oro oscuro */
+      }
+    }
+  }
+
+  .appointment-summary {
+    max-height: 1000px;
+    overflow: hidden;
+    transition: opacity 0.9s ease, max-height 0.5s ease;
+  }
+}
+
+.confirmation-message {
+  margin-top: 20px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #dff0d8; /* Color verde claro */
+  color: #3c763d; /* Color verde oscuro */
+  font-weight: bold;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideIn 0.8s forwards;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}

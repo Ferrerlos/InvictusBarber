@@ -1,0 +1,47 @@
+<div class="calendar-container">
+  <div class="calendar-header">
+    <button (click)="previousMonth()">Anterior</button>
+    <h2>{{ viewDate | date: 'MMMM' | capitalizeDate }}</h2>
+    <button (click)="nextMonth()">Siguiente</button>
+  </div>
+  <mwl-calendar-month-view
+    [viewDate]="viewDate"
+    (dayClicked)="onDayClicked($event)">
+  </mwl-calendar-month-view>
+</div>
+<div *ngIf="dateSelected && selectedDate" class="appointments-list slide-in">
+  <h3>Citas para el {{ selectedDate | date: 'EEEE, d MMMM yyyy' | capitalizeDate }}</h3>
+  <div class="form-group">
+    <label for="email">Correo Electrónico</label>
+    <input type="email" id="email" [(ngModel)]="clientEmail" placeholder="Enter your email" required />
+  </div>
+  <div class="form-group phone-input">
+    <label for="phone">Número de Teléfono</label>
+    <div class="phone-input-inner">
+      <select [(ngModel)]="selectedCountry" class="country-select">
+        <option *ngFor="let country of countryCodes" [ngValue]="country">
+         {{ country.dial_code }}
+        </option>
+      </select>
+      <input type="tel" id="phone" [(ngModel)]="clientPhone" placeholder="Enter your phone number" required />
+    </div>
+  </div>
+  <ul>
+    <li *ngFor="let appointment of appointments" (click)="onAppointmentClick(appointment)">
+      {{ appointment.time }}
+      <button *ngIf="appointment.status === 'Disponible'" class="btn-available">Disponible</button>
+    </li>
+    <br>
+    <div *ngIf="selectedAppointment" class="appointment-summary">
+      <h3>Resumen de la Cita</h3>
+      <p>Fecha: {{ selectedDate | date: 'EEEE, d MMMM yyyy' | capitalizeDate }}</p>
+      <p>Hora: {{ selectedAppointment.time }}</p>
+      <p>Correo Electrónico: {{ clientEmail }}</p>
+      <p>Número de Teléfono: {{ fullPhoneNumber }}</p>
+      <button (click)="confirmAppointment()"  class="btn-available-confirm">Confirmar Cita</button>
+    </div>
+    <div *ngIf="confirmationMessage" class="confirmation-message">
+      <p>{{ confirmationMessage }}</p>
+    </div>
+  </ul>
+</div>

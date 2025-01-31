@@ -1,0 +1,29 @@
+<header class="header">
+  <img src="assets/logo.png" routerLink="/" alt="Invictus Barber Logo" class="logo">
+</header>
+
+<div class="confirmation">
+  <h2>Ajustes de la cita</h2>
+  <br>
+  <br>
+  <div *ngIf="showOptions">
+    <label for="newDate">Nueva Fecha:</label>
+    <input type="date" id="newDate" [(ngModel)]="newDate" (change)="onDateChange()">
+    <br>
+    <label for="newTime">Hora Disponible:</label>
+    <select id="newTime" [(ngModel)]="newTime">
+      <option value="" disabled>Selecciona una hora</option>
+      <option *ngFor="let time of availableTimes" [value]="time">{{ time }}</option>
+    </select>
+    <br>
+    <br>
+    <button (click)="modifyAppointment()">Modificar Cita</button>
+  </div>
+  <br>
+
+  <h2 *ngIf="showOptions">Cancelar Cita</h2>
+  <div class="flecha" *ngIf="showOptions"><img src="assets/flecha.svg" alt="flecha abajo"></div>
+  <br>
+  <button class="cancel" *ngIf="showOptions" (click)="cancelAppointment()">Cancelar Cita</button>
+  <p *ngIf="!showOptions">{{ message }}</p>
+</div>

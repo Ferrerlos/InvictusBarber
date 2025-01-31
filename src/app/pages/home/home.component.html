@@ -1,0 +1,38 @@
+<!-- Header -->
+<header class="header">
+    <img src="assets/logo.png" routerLink="/" alt="Invictus Barber Logo" class="logo">
+  </header>
+  
+  <!-- Main Content -->
+  <main>
+    <section class="services">
+      <h2 class="section-title">Servicios y Precios</h2>
+      <div class="fondo"><img src="assets/Corte1.jpg" alt="corte1"></div>
+      <div class="services-list">
+        <div class="service-card">
+          <h3 class="service-title">CORTE</h3>
+          <p class="service-price">27€</p>
+        </div>
+        <div class="service-card">
+          <h3 class="service-title">BARBA</h3>
+          <p class="service-price">10€</p>
+        </div>
+        <div class="service-card">
+          <h3 class="service-title">CORTE & BARBA</h3>
+          <p class="service-price">35€</p>
+        </div>
+      </div>
+    </section>
+    <section class="booking text-center" [class.active]="showCalendar">
+      <h2 class="section-title">Reserva tu cita</h2>
+      <div class="barber-selection" (click)="toggleCalendar()">
+        <h1 class="barber-name">Alito</h1>
+        <a href="https://www.tiktok.com/@alitoobarber" target="_blank" class="tiktok-link">
+          <img src="assets/tiktok.svg" alt="tiktok">
+        </a>
+      </div>
+      <div class="calendar-container">
+        <app-calendar></app-calendar>
+      </div>
+    </section>
+  </main>
