@@ -1,0 +1,8 @@
+{
+  "routes": {
+    "/": {},
+    "/confirm/id1": {},
+    "/confirm/id2": {},
+    "/confirm/id3": {}
+  }
+}
