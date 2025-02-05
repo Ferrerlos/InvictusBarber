@@ -9,10 +9,4 @@ import { RouterModule } from '@angular/router';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent {
-  showCalendar: boolean = false;
-
-  toggleCalendar(): void {
-    this.showCalendar = !this.showCalendar;
-  }
-}
+export class HomeComponent {}

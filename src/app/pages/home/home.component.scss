@@ -100,13 +100,6 @@
 }
 
 .calendar-container {
-  opacity: 0;
-  max-height: 0;
   overflow: hidden;
   transition: opacity 0.5s ease, max-height 0.5s ease;
-}
-
-.booking.text-center.active .calendar-container {
-  opacity: 1;
-  max-height: 10000px; /* Ajusta según sea necesario */
 }

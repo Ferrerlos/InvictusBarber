@@ -1,7 +1,7 @@
 const express = require('express'); // Importa el módulo de Express para crear el servidor
 const bodyParser = require('body-parser'); // Permite analizar cuerpos de solicitudes entrantes
 const cors = require('cors'); // Habilita CORS para permitir solicitudes desde diferentes dominios
-const mysql = require('mysql'); // Módulo para conectarse a bases de datos MySQL
+const mysql = require('mysql2'); // Módulo para conectarse a bases de datos MySQL
 const nodemailer = require('nodemailer'); // Permite enviar correos electrónicos
 const { format } = require('date-fns'); // Biblioteca para formatear fechas
 const { es } = require('date-fns/locale'); // Configuración regional en español para formatear fechas
